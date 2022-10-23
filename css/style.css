@@ -1,0 +1,307 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  cursor: default;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: bisque;
+}
+
+
+
+
+
+/* AIM */
+.aim__container {
+	position: relative;
+	width: 300px;
+	height: 320px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(137, 205, 0);
+	border-radius: 10px;
+	box-shadow: inset 0 0 5px rgba(254, 220, 220, 1);
+	cursor: crosshair;
+	padding: 20px;
+}
+.aim {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+
+
+
+
+
+/* score */
+
+
+.aim__score {
+	position: absolute;
+	font-size: 24px;
+	top: -30px;
+	left: 5px;
+	cursor: default;
+	user-select: none;
+}
+.miss{
+	position: absolute;
+	font-size: 24px;
+	top: -30px;
+	left: 120px;
+	cursor: default;
+	user-select: none;
+}
+
+
+
+
+
+
+
+/* buttons */
+
+.aim__button {
+	position: absolute;
+	font-size: 22px;
+	border: 1px solid gray;
+	border-radius: 10px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(49, 119, 59, 0.351);
+	cursor: pointer;
+	z-index: 1;
+	user-select: none;
+}
+.aim__button_reset{
+	position: absolute;
+	font-size: 22px;
+	border: 1px solid black;
+	padding: 0 10px;
+	border-radius: 10px;
+	top: -32px;
+	right: 0;
+	color: bisque;
+	background: rgba(72, 67, 67, 0.86);
+	user-select: none;
+}
+.aim__button_reset-dont-active{
+	position: absolute;
+	font-size: 22px;
+	border: 1px solid gray;
+	padding: 0 10px;
+	border-radius: 10px;
+	top: -32px;
+	right: 0;
+	color: bisque;
+	background: rgba(128, 128, 128, 0.615);
+	cursor: default;
+	user-select: none;
+}
+
+
+
+/* sircle */
+.low {
+	background-color: rgba(0, 0, 0, 0.795);
+	border-radius: 50%;
+	animation: circle linear 1.8s;
+	position: absolute;
+	z-index: 1;
+	transition: 0.2s ease-in;
+}
+.middle {
+	background-color: rgba(0, 0, 0, 0.795);
+	border-radius: 50%;
+	animation: circle linear 1.2s;
+	position: absolute;
+	z-index: 1;
+	transition: 0.2s ease-in;
+}
+.high {
+	background-color: rgba(0, 0, 0, 0.795);
+	border-radius: 50%;
+	animation: circle linear 0.9s;
+	position: absolute;
+	z-index: 1;
+	transition: 0.2s ease-in;
+}
+
+
+@keyframes circle {
+	0% {
+		width: 0px;
+		height: 0px;
+		top: 0;
+		left: 0;
+	}
+	50% {
+		width: 30px;
+		height: 30px;
+		top: -15px;
+		left: -15px;
+	}
+	100% {
+		width: 0px;
+		height: 0px;
+		top: 0;
+		left: 0;
+	}
+}
+
+/* game over */
+
+
+.game-over{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	opacity: 0;
+	transition: 0.1s linear;
+	display: none;
+}
+
+
+
+/* difficulty */
+
+
+.difficulty {
+	position: absolute;
+	left: 305px;
+	top: 0;
+	font-weight: 700;
+	background-color: rgba(72, 67, 67, 0.86);
+	padding: 9px 12px;
+	border-radius: 50px;
+	cursor: default;
+	color: bisque;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	width: 46px;
+	transition: 0.5s ease-in;
+	border: 1px solid black;
+}
+.difficulty__text{
+min-width: 310px;
+pointer-events: none;
+}
+.difficulty:hover{
+	width: 220px;
+}
+.difficulty__img{
+	width: 25px;
+	margin-left: -2px;
+	pointer-events: none;
+}
+.diff{
+	position: absolute;
+	top: 42px;
+	line-height: 1.3;
+	padding: 8px 0 15px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background: rgba(72, 67, 67, 0.86);
+	text-transform: uppercase;
+	border: 2px solid bisque;
+	border-top: none;
+	color: bisque;
+	text-shadow: 1px 1px 2px black;
+	overflow: hidden;
+	transition: 0.2s ease-in;
+	opacity: 0;
+	display: none;
+}
+.difficulty__low{
+	left: 40px;
+	width: 50px;
+}
+.difficulty__middle{
+	left: 90px;
+	width: 50px;
+}
+.difficulty__high{
+	left: 140px;
+	width: 50px;
+}
+.difficulty:hover .diff{
+	display: block;
+}
